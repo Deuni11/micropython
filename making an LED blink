@@ -1,0 +1,15 @@
+# turning on and off an led
+import machine # module for micro python
+
+led = machine.pin(5, pin.OUT) # since you want it to be an output
+# or just do from machine import Pin and then you can stop using machine and just use Pin
+
+from time import sleep
+
+led = machine.Pin(5, machine.Pin.OUT)
+
+while True:
+    led.on()
+    sleep(1) # used to create a delay 
+    led.off()
+    sleep(1)
