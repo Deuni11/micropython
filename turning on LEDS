@@ -1,0 +1,15 @@
+import machine # module for micro python
+
+led = machine.pin(5, pin.OUT) # since you want it to be an output
+
+# there are 3 methods to turn an LED on and off
+
+# ONE
+led.on()
+led.off()
+
+# TWO
+led.value()
+
+# shortcut
+led() #takes in whatver state you give it ex- on or off
