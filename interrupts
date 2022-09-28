@@ -1,0 +1,16 @@
+# using an interrupt to turn an led on when a button is pressed and off when it is not pressed
+
+from machine import Pin 
+
+led = Pin(5, Pin.OUT)
+btn = Pin(0, Pin.IN)
+
+def my_func(Pin): # the fuction that goes into the interrupt 
+    if btn() == 0: # active-low => pressed 
+        led.on()
+    else:
+         led.off()
+    
+
+# interrupt request 
+btn.irq(my_func) # use irq when you want to use interrupt 
